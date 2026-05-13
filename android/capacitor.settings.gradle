@@ -29,5 +29,8 @@ project(':capacitor-status-bar').projectDir = new File('../node_modules/@capacit
 include ':capgo-capacitor-accelerometer'
 project(':capgo-capacitor-accelerometer').projectDir = new File('../node_modules/@capgo/capacitor-accelerometer/android')
 
+include ':capgo-capacitor-in-app-review'
+project(':capgo-capacitor-in-app-review').projectDir = new File('../node_modules/@capgo/capacitor-in-app-review/android')
+
 include ':capgo-capacitor-native-navigation'
 project(':capgo-capacitor-native-navigation').projectDir = new File('../node_modules/@capgo/capacitor-native-navigation/android')
