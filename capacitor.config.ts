@@ -26,7 +26,7 @@ const config: CapacitorConfig = {
       backgroundColor: '#ffffffff'
     },
     CapacitorUpdater: {
-      version: '0.0.0',
+      version: '1.0.0',
       appId: 'com.slapphone.app',
       autoUpdate: true,
       directUpdate: 'always',

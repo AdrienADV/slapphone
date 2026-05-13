@@ -20,6 +20,7 @@ dependencies {
     implementation project(':capgo-capacitor-accelerometer')
     implementation project(':capgo-capacitor-in-app-review')
     implementation project(':capgo-capacitor-native-navigation')
+    implementation project(':capgo-capacitor-updater')
 
 }
 
