@@ -22,7 +22,8 @@ let package = Package(
         .package(name: "CapacitorStatusBar", path: "../../../node_modules/@capacitor/status-bar"),
         .package(name: "CapgoCapacitorAccelerometer", path: "../../../node_modules/@capgo/capacitor-accelerometer"),
         .package(name: "CapgoCapacitorInAppReview", path: "../../../node_modules/@capgo/capacitor-in-app-review"),
-        .package(name: "CapgoCapacitorNativeNavigation", path: "../../../node_modules/@capgo/capacitor-native-navigation")
+        .package(name: "CapgoCapacitorNativeNavigation", path: "../../../node_modules/@capgo/capacitor-native-navigation"),
+        .package(name: "CapgoCapacitorUpdater", path: "../../../node_modules/@capgo/capacitor-updater")
     ],
     targets: [
         .target(
@@ -40,7 +41,8 @@ let package = Package(
                 .product(name: "CapacitorStatusBar", package: "CapacitorStatusBar"),
                 .product(name: "CapgoCapacitorAccelerometer", package: "CapgoCapacitorAccelerometer"),
                 .product(name: "CapgoCapacitorInAppReview", package: "CapgoCapacitorInAppReview"),
-                .product(name: "CapgoCapacitorNativeNavigation", package: "CapgoCapacitorNativeNavigation")
+                .product(name: "CapgoCapacitorNativeNavigation", package: "CapgoCapacitorNativeNavigation"),
+                .product(name: "CapgoCapacitorUpdater", package: "CapgoCapacitorUpdater")
             ]
         )
     ]

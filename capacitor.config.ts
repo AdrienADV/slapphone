@@ -6,26 +6,33 @@ const config: CapacitorConfig = {
   webDir: 'dist',
   plugins: {
     SystemBars: {
-      insetsHandling: "css",
-      style: "DARK",
+      insetsHandling: 'css',
+      style: 'DARK'
     },
     SplashScreen: {
       launchShowDuration: 2000,
-      launchAutoHide: true,
+      launchAutoHide: false,
       launchFadeOutDuration: 500,
-      backgroundColor: "#95A176",
-      showSpinner: false,
+      backgroundColor: '#95A176',
+      showSpinner: false
     },
     Keyboard: {
-      resize: "body",
+      resize: 'body',
       resizeOnFullScreen: true
     },
     StatusBar: {
       overlaysWebView: true,
-      style: "LIGHT",
-      backgroundColor: "#ffffffff",
+      style: 'LIGHT',
+      backgroundColor: '#ffffffff'
+    },
+    CapacitorUpdater: {
+      version: '0.0.0',
+      appId: 'com.slapphone.app',
+      autoUpdate: true,
+      directUpdate: 'always',
+      autoSplashscreen: true
     }
-  },
+  }
 };
 
 export default config;

@@ -5,6 +5,9 @@ import './index.css'
 import App from './app'
 import { ThemeProvider } from './components/theme-provider';
 import { initTransitions } from '@capgo/capacitor-transitions/react';
+import { CapacitorUpdater } from '@capgo/capacitor-updater';
+
+CapacitorUpdater.notifyAppReady();
 import '@capgo/capacitor-transitions';
 
 initTransitions({ platform: 'auto' });

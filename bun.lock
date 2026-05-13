@@ -16,8 +16,11 @@
         "@capacitor/share": "^8.0.1",
         "@capacitor/splash-screen": "^8.0.1",
         "@capacitor/status-bar": "^8.0.2",
-        "@capgo/capacitor-native-navigation": "^8.0.15-beta.pr12.18.1",
+        "@capgo/capacitor-accelerometer": "^8.0.30",
+        "@capgo/capacitor-in-app-review": "^8.1.4",
+        "@capgo/capacitor-native-navigation": "8.0.17",
         "@capgo/capacitor-transitions": "^8.0.3",
+        "@capgo/capacitor-updater": "^8.45.11",
         "@supabase/supabase-js": "^2.95.3",
         "@tailwindcss/vite": "^4.1.18",
         "class-variance-authority": "^0.7.1",
@@ -142,9 +145,15 @@
 
     "@capacitor/status-bar": ["@capacitor/status-bar@8.0.2", "", { "peerDependencies": { "@capacitor/core": ">=8.0.0" } }, "sha512-WXs8YB8B9eEaPZz+bcdY6t2nForF1FLoj/JU0Dl9RRgQnddnS98FEEyDooQhaY7wivr000j4+SC1FyeJkrFO7A=="],
 
-    "@capgo/capacitor-native-navigation": ["@capgo/capacitor-native-navigation@8.0.15-beta.pr12.18.1", "", { "peerDependencies": { "@capacitor/core": ">=8.0.0" } }, "sha512-Sm4LVryg8O9fRg0coNAK4qZ3NBuYMFeTNtP/g8nrJO/Y7lqKRv4KO1EM9iS91uQbOZr+jyS2mxooZ512zb6A0g=="],
+    "@capgo/capacitor-accelerometer": ["@capgo/capacitor-accelerometer@8.0.30", "", { "peerDependencies": { "@capacitor/core": ">=8.0.0" } }, "sha512-w9woRF/t+RKPpxqD6ELyJhD3Z5wC2gDwfdhQ/CPkgWghOMT0jak5dk0JQdSGh7HZggfFgdUI5pTzepJSOdyErg=="],
+
+    "@capgo/capacitor-in-app-review": ["@capgo/capacitor-in-app-review@8.1.4", "", { "peerDependencies": { "@capacitor/core": ">=8.0.0" } }, "sha512-eEQC0Q28aHPRh2t5q63RrxkJsSSyah/LRQskdwgYeR5pXUj59gU4G6z4aWXg2F4x3ytYXiQemtshEpenQt9tEg=="],
+
+    "@capgo/capacitor-native-navigation": ["@capgo/capacitor-native-navigation@8.0.17", "", { "peerDependencies": { "@capacitor/core": ">=8.0.0" } }, "sha512-77W09BqZZFn1I+PZKoVdx2YcSmkdpaKLcSApNwNeq3eYE43TZRAJ1v/w7A5Od5UQFFiol8K0Nmms44TiSsfdlw=="],
 
     "@capgo/capacitor-transitions": ["@capgo/capacitor-transitions@8.0.4", "", { "peerDependencies": { "@angular/core": ">=17.0.0", "react": ">=18.0.0", "react-dom": ">=18.0.0", "solid-js": ">=1.0.0", "svelte": ">=4.0.0", "vue": ">=3.0.0" }, "optionalPeers": ["@angular/core", "react", "react-dom", "solid-js", "svelte", "vue"] }, "sha512-aopnOgzd6GcohLxfieTfp3gf3m7T1CkgkttHwjQtGccGCjETFB02xHvZL12WSzbgJJsAhC49os7gXlhNfHZvfA=="],
+
+    "@capgo/capacitor-updater": ["@capgo/capacitor-updater@8.45.11", "", { "peerDependencies": { "@capacitor/core": "^8.0.0" } }, "sha512-fu8mntiIhK+04AXrTeJB/Iy6xs15qiw4ZrRVkfRl2EC9t/i4F+vIwik7xwiyK57PkrWPZo41Mwxrfv+ZgCg06Q=="],
 
     "@capgo/vite-capacitor": ["@capgo/vite-capacitor@0.1.0", "", { "peerDependencies": { "vite": ">=4.0.0" } }, "sha512-ai0q8NgV3zQfLcnttjPhQjOKL6XV69ZLPOggl3mnhxfn0Fl6SQRswrzCG7EHCTK1h7dQV6+Xs4M3luhkVKFEWQ=="],
 
