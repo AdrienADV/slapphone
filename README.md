@@ -1,131 +1,136 @@
-# slapphone
+<p align="center">
+  <img src="./assets/icon-only.png" alt="Slap Phone icon" width="112" height="112" />
+</p>
 
-slapphone is a starter boilerplate to ship mobile apps fast with **React + Capacitor + Supabase + shadcn/ui**.
+# Slap Phone
 
-It includes:
-- React + Vite + TypeScript
-- Capacitor setup for iOS and Android
-- Supabase auth wiring (login, session, protected routes)
-- Tailwind CSS v4 + shadcn/ui components
-- Mobile-first layout with safe-area handling
+Slap Phone is a React + Capacitor mobile app that turns phone movement into sound effects. The main mode plays a selected sound when the phone is slapped, and the anti-theft mode triggers a siren when the armed device is moved.
+
+## Features
+
+- Motion detection through the accelerometer with `@capgo/capacitor-accelerometer`.
+- `Slap` mode: slap the phone to play the selected sound.
+- 9 bundled sounds: Fart, Combo, Gentleman, Goat, Groan, Metal, Dude, Sexy, and Yamete.
+- Sensitivity levels: `Soft`, `Medium`, and `Hard`.
+- Preloaded audio for lower playback latency.
+- `Thief` mode: arm the phone with a countdown, then play a siren if it moves.
+- Native tab navigation with `@capgo/capacitor-native-navigation`.
+- Mobile transitions with `@capgo/capacitor-transitions`.
+- iOS and Android support through Capacitor.
+- Native update flow configured with `@capgo/capacitor-updater`.
 
 ## Tech Stack
 
 - React 19
-- Vite 7
-- TypeScript 5
+- Vite 8
+- TypeScript 5.9
 - Capacitor 8
-- Supabase JS v2
-- Tailwind CSS v4
+- Tailwind CSS 4
 - shadcn/ui
+- Motion
+- Capgo plugins
 
-## Prerequisites
+## Requirements
 
 - Node.js 20+
 - npm
-- For iOS development: Xcode (macOS)
-- For Android development: Android Studio + Android SDK
+- Xcode for iOS development
+- Android Studio and Android SDK for Android development
 
-## Quick Start
-
-1. Install dependencies:
+## Installation
 
 ```bash
 npm install
 ```
 
-2. Create your local env file:
-
-```bash
-cp .env.example .env
-```
-
-3. Set your Supabase values in `.env`:
-
-```env
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_PUBLISHABLE_KEY=your-anon-or-publishable-key
-```
-
-4. Start the web app:
+## Web Development
 
 ```bash
 npm run dev
 ```
 
-## Mobile Development
+The app runs in the browser through Vite. Some features rely on Capacitor plugins and are most useful on a real mobile device.
 
-This project already contains `ios/` and `android/` native projects.
-
-### Run Vite for live reload on a real device
+## Mobile Development With Live Reload
 
 ```bash
 npm run dev:mobile
 ```
 
-This script exposes Vite on your local network and sets `CAP_SERVER_URL` automatically, so your iOS/Android physical device can use Capacitor live reload.
+This script starts Vite on the local network, computes `CAP_SERVER_URL`, and lets the iOS and Android projects load the app from the development server.
 
-### Open native projects
+Then open the native project:
 
 ```bash
 npx cap open ios
 npx cap open android
 ```
 
-### Build and sync web assets to native
-
-Use this before native release/testing with bundled assets:
+## Build And Native Sync
 
 ```bash
-npx cap sync
 npm run build
+npx cap sync
 ```
+
+Or use the existing script:
+
+```bash
+npm run sync
+```
+
+`npm run sync` builds the web assets into `dist/`, then syncs Capacitor with the `ios/` and `android/` projects.
 
 ## Available Scripts
 
-- `npm run dev` - start Vite dev server
-- `npm run dev:mobile` - start Vite for Capacitor live reload on a real device
-- `npm run build` - build web assets into `dist/`
-- `npm run preview` - preview production build
-- `npm run lint` - run ESLint
+- `npm run dev`: start Vite.
+- `npm run dev:mobile`: start Vite for Capacitor live reload on a real device.
+- `npm run build`: compile the web app into `dist/`.
+- `npm run sync`: run the build and then `npx cap sync`.
+- `npm run preview`: preview the production build.
+- `npm run lint`: run ESLint.
 
 ## Project Structure
 
 ```text
 slapphone/
+├── assets/
+│   ├── icon-only.png        # App icon
+│   ├── splash.png           # Splash screen
+│   └── apps-store-ipad/     # iPad marketing screenshots
 ├── src/
-│   ├── components/        # UI components (including shadcn/ui)
-│   ├── contexts/          # React contexts (auth state)
-│   ├── layouts/           # App layouts (tab layout)
-│   ├── lib/               # Utilities, Supabase client, route guards
-│   ├── pages/             # Screens (auth + app pages)
-│   ├── app.tsx            # Root app component
-│   ├── main.tsx           # Providers + router bootstrap
-│   └── router.tsx         # Route definitions
-├── android/               # Native Android project
-├── ios/                   # Native iOS project
-├── scripts/dev-mobile.mjs # Mobile dev server helper
-├── capacitor.config.ts    # Capacitor app configuration
-└── .env.example           # Required environment variables
+│   ├── app.tsx              # Native navigation and Capacitor outlet
+│   ├── main.tsx             # React bootstrap, theme, transitions, updater
+│   ├── router.tsx           # React Router routes
+│   ├── layouts/
+│   │   └── tab-layout.tsx   # Native tab bar height handling
+│   ├── pages/app/
+│   │   ├── home.tsx         # Slap mode
+│   │   └── settings.tsx     # Thief mode
+│   ├── assets/sounds/       # Bundled sounds
+│   └── components/          # UI components
+├── android/                 # Native Android project
+├── ios/                     # Native iOS project
+├── scripts/dev-mobile.mjs   # Mobile live reload helper
+├── capacitor.config.ts      # Capacitor configuration
+└── vite.config.ts           # Vite + Capgo configuration
 ```
 
-## Authentication Flow
+## Capacitor Configuration
 
-- `AuthProvider` reads Supabase session and tracks auth state.
-- `GuestRoute` redirects logged-in users away from `/login`.
-- `ProtectedRoute` restricts `/app/*` routes to authenticated users.
+The app is configured in `capacitor.config.ts` with:
 
-## Important Config to Update
-
-Before shipping your app, update:
-
-- `capacitor.config.ts`
-  - `appId` (currently `com.example.app`)
-  - `appName`
-- Supabase project URL and key in `.env`
-- App icons/splash screens in native projects (`ios/` and `android/`)
+- `appId`: `com.slapphone.app`
+- `appName`: `Slap Phone`
+- `webDir`: `dist`
+- green splash screen without spinner
+- status bar overlaying the WebView
+- keyboard resizing on the `body`
+- Capgo updater enabled with auto-update
 
 ## Notes
 
-- This boilerplate is mobile-first but can be developed in the browser.
-- Safe-area CSS variables are already configured for notch/status-bar devices.
+- `Slap` mode uses a 600 ms cooldown to avoid rapid repeated triggers.
+- Sensitivity thresholds are defined in `src/pages/app/home.tsx`.
+- `Thief` mode triggers the siren when movement exceeds its threshold after arming.
+- The app does not currently include an authentication flow or Supabase configuration, even though the Supabase dependency is still present in `package.json`.
