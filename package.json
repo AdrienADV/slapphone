@@ -28,7 +28,6 @@
     "@capgo/capacitor-native-navigation": "8.0.17",
     "@capgo/capacitor-transitions": "^8.0.3",
     "@capgo/capacitor-updater": "^8.45.11",
-    "@supabase/supabase-js": "^2.95.3",
     "@tailwindcss/vite": "^4.1.18",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

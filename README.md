@@ -133,4 +133,3 @@ The app is configured in `capacitor.config.ts` with:
 - `Slap` mode uses a 600 ms cooldown to avoid rapid repeated triggers.
 - Sensitivity thresholds are defined in `src/pages/app/home.tsx`.
 - `Thief` mode triggers the siren when movement exceeds its threshold after arming.
-- The app does not currently include an authentication flow or Supabase configuration, even though the Supabase dependency is still present in `package.json`.
